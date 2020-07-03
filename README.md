@@ -24,7 +24,7 @@ _The user can add, edit, remove,and view details of kegs which are displayed in 
 ## Stretch Goals
 |  |  |
 |--|--|
-| |As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake. |
+| :heavy_check_mark: |As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake. |
 | :heavy_check_mark: |As a user, I want to be able to delete a keg. |
 | :heavy_check_mark: | As a user, I want a keg to update to say "Out of Stock" once it's empty. |
 | :heavy_check_mark: | As a user, I want kegs with less than 10 pints to include a message that says "Almost Empty" so I can try a pint before it's gone! |
