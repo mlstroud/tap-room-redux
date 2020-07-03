@@ -10,7 +10,10 @@ function KegDetail(props) {
           <Card>
             <CardHeader><h4>{props.keg.name}</h4></CardHeader>
             <CardBody>
-              <CardTitle>{props.keg.pints === 0 && "Out of stock."}</CardTitle>
+              <CardTitle>
+                {props.keg.pints < 10 && props.keg.pints > 0 && "Almost empty"}
+                {props.keg.pints === 0 && "Out of stock."}
+              </CardTitle>
               <Table>
                 <tbody>
                   <tr>
