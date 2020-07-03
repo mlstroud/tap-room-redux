@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CardHeader, CardBody, CardText, Table, Button } from "reactstrap";
+import { CardHeader, CardBody, CardText, Button } from "reactstrap";
 
 
 function Keg(props) {
