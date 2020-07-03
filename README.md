@@ -22,8 +22,8 @@ _The user can add, edit, remove,and view details of kegs which are displayed in 
 | :heavy_check_mark: |As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0. |
 
 ## Stretch Goals
-| |
-|--|
+|  |  |
+|--|--|
 | |As a user, I want the option to edit a keg's properties after entering them just in case I make a mistake. |
 | |As a user, I want to be able to delete a keg. |
 | :heavy_check_mark: | As a user, I want a keg to update to say "Out of Stock" once it's empty. |
