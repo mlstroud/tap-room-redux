@@ -7,7 +7,7 @@ function Keg(props) {
   return (
     <React.Fragment>
       <CardBody>
-        <CardTitle><h4>{props.name}</h4></CardTitle>
+        <CardTitle onClick={() => props.whenKegClicked(props.id)}><h4>{props.name}</h4></CardTitle>
         <Table>
           <tbody>
             <tr>
@@ -35,6 +35,7 @@ function Keg(props) {
 }
 
 Keg.propTypes = {
+  whenKegClicked: PropTypes.func,
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.number,
