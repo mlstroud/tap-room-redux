@@ -1,21 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CardBody, CardTitle, Table, Button } from "reactstrap";
+import { CardHeader, CardBody, CardText, Table, Button } from "reactstrap";
 
 
 function Keg(props) {
   return (
     <React.Fragment>
+      <CardHeader><h4>{props.name}</h4></CardHeader>
       <CardBody>
-        <CardTitle><h4>{props.name}</h4></CardTitle>
-        <Table>
-          <tbody>
-            <tr>
-              <th>Price</th>
-              <td>${props.price}</td>
-            </tr>
-          </tbody>
-        </Table>
+        <CardText>
+          {props.pints > 0 ? `from ${props.brand}, ${props.abv}%    $${props.price}` : "Out of stock."}
+        </CardText>
         <Button onClick={() => props.whenPintSold({
           name: props.name,
           brand: props.brand,

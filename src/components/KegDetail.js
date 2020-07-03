@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Col, Row, Card, Table } from "reactstrap";
+import { Col, Row, Card, CardHeader, CardTitle, CardBody, Table } from "reactstrap";
 
 function KegDetail(props) {
   return (
@@ -8,27 +8,30 @@ function KegDetail(props) {
       <Col md="12">
         <Row>
           <Card>
-            <h3>{props.keg.name}</h3>
-            <Table>
-              <tbody>
-                <tr>
-                  <th>Brand:</th>
-                  <td>{props.keg.brand}</td>
-                </tr>
-                <tr>
-                  <th>ABV:</th>
-                  <td>{props.keg.abv}</td>
-                </tr>
-                <tr>
-                  <th>Price:</th>
-                  <td>{props.keg.price}</td>
-                </tr>
-                <tr>
-                  <th>Pints Left:</th>
-                  <td>{props.keg.pints}</td>
-                </tr>
-              </tbody>
-            </Table>
+            <CardHeader><h4>{props.keg.name}</h4></CardHeader>
+            <CardBody>
+              <CardTitle>{props.keg.pints === 0 && "Out of stock."}</CardTitle>
+              <Table>
+                <tbody>
+                  <tr>
+                    <th>Brand:</th>
+                    <td>{props.keg.brand}</td>
+                  </tr>
+                  <tr>
+                    <th>ABV:</th>
+                    <td>{props.keg.abv}</td>
+                  </tr>
+                  <tr>
+                    <th>Price:</th>
+                    <td>{props.keg.price}</td>
+                  </tr>
+                  <tr>
+                    <th>Pints Left:</th>
+                    <td>{props.keg.pints}</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </CardBody>
           </Card>
         </Row>
       </Col>
