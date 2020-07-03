@@ -1,8 +1,28 @@
 import React from "react";
+import Keg from "./Keg";
+import { Row, Col, Card } from "reactstrap";
 
 function KegList() {
   return (
-    "Keg List"
+    <React.Fragment>
+      <Col md="12">
+        <Row>
+          <Card>
+            <Keg />
+          </Card>
+        </Row>
+        <Row>
+          <Card>
+            <Keg />
+          </Card>
+        </Row>
+        <Row>
+          <Card>
+            <Keg />
+          </Card>
+        </Row>
+      </Col>
+    </React.Fragment>
   );
 }
 
