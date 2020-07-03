@@ -12,9 +12,11 @@ function KegList(props) {
             <Card key={"card" + keg.id}>
               <Keg
                 whenKegClicked={props.onKegSelection}
+                whenPintSold={props.onSellPint}
                 name={keg.name}
                 brand={keg.brand}
                 abv={keg.abv}
+                pints={keg.pints}
                 id={keg.id}
                 price={keg.price}
                 key={keg.id} />
@@ -28,7 +30,8 @@ function KegList(props) {
 
 KegList.propTypes = {
   kegList: PropTypes.array,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  onSellPint: PropTypes.func
 }
 
 export default KegList;
