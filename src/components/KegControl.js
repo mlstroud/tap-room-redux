@@ -1,5 +1,6 @@
 import React from "react";
 import NewKegForm from "./NewKegForm";
+import KegDetail from "./KegDetail";
 
 class KegControl extends React.Component {
 
@@ -7,7 +8,8 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       masterKegList: [],
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      selectedKeg: null
     };
   }
 
