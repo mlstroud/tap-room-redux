@@ -10,7 +10,7 @@ function NewKegForm(props) {
     props.onNewKegCreation({
       name: event.target.kegName.value,
       brand: event.target.kegBrand.value,
-      price: event.target.kegPrice.value,
+      price: parseFloat(event.target.kegPrice.value),
       abv: event.target.kegAbv.value,
       id: v4()
     })
