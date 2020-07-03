@@ -30,6 +30,12 @@ label {
 }
 
 .jumbotron {
+  margin-top: 0;
+  padding-top: 0;
   background-color: white !important;
   text-align: center;
+}
+
+.banner-img {
+  width: 100%;
 }
