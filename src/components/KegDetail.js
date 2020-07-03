@@ -19,11 +19,11 @@ function KegDetail(props) {
                   </tr>
                   <tr>
                     <th>ABV:</th>
-                    <td>{props.keg.abv}</td>
+                    <td>{Number(props.keg.abv).toFixed(1)}%</td>
                   </tr>
                   <tr>
                     <th>Price:</th>
-                    <td>{props.keg.price}</td>
+                    <td>${Number(props.keg.price).toFixed(2)}</td>
                   </tr>
                   <tr>
                     <th>Pints Left:</th>

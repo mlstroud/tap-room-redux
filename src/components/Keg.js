@@ -9,7 +9,7 @@ function Keg(props) {
       <CardHeader><h4>{props.name}</h4></CardHeader>
       <CardBody>
         <CardText>
-          <em>by {props.brand} {props.abv}%    <strong>${props.price}</strong></em>
+          <em>by {props.brand} {Number(props.abv).toFixed(1)}%    <strong>${Number(props.price).toFixed(2)}</strong></em>
           <br />
           <em>{props.pints > 0 ? `pints remaining: ${props.pints}` : "Out of stock."}</em>
         </CardText>
