@@ -12,6 +12,7 @@ function KegList(props) {
             <Card key={"card" + keg.id}>
               <Keg name={keg.name}
                 brand={keg.brand}
+                abv={keg.abv}
                 price={keg.price}
                 key={keg.id} />
             </Card>

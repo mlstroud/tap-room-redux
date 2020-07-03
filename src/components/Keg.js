@@ -15,6 +15,10 @@ function Keg(props) {
               <td>{props.brand}</td>
             </tr>
             <tr>
+              <th>ABV</th>
+              <td>{props.abv}%</td>
+            </tr>
+            <tr>
               <th>Price</th>
               <td>{props.price}</td>
             </tr>

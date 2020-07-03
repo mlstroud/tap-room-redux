@@ -11,6 +11,7 @@ function NewKegForm(props) {
       name: event.target.kegName.value,
       brand: event.target.kegBrand.value,
       price: event.target.kegPrice.value,
+      abv: event.target.kegAbv.value,
       id: v4()
     })
   }
@@ -26,6 +27,10 @@ function NewKegForm(props) {
         <Input type="text"
           name="kegBrand"
           placeholder="Tasty Brewing Co." />
+        <Label for="kegAbv">ABV</Label>
+        <Input type="text"
+          name="kegAbv"
+          placeholder="6.2" />
         <Label for="kegPrice">Price</Label>
         <Input type="text"
           name="kegPrice"
