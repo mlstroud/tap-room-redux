@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CardHeader, CardBody, CardText, Button } from "reactstrap";
+import BeerIcon from "./../img/beer.png";
 
 
 function Keg(props) {
@@ -9,6 +10,7 @@ function Keg(props) {
     <React.Fragment>
       <CardHeader><h4>{props.name}</h4></CardHeader>
       <CardBody>
+        <img src={BeerIcon} class="beer-icon" />
         <CardText>
           <em>by {props.brand} {Number(props.abv).toFixed(1)}%    <strong>${Number(props.price).toFixed(2)}</strong></em>
           <br /><br />
