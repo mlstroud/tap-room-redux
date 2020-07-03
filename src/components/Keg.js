@@ -15,7 +15,7 @@ function Keg(props) {
           <em>by {props.brand} {Number(props.abv).toFixed(1)}%    <strong>${Number(props.price).toFixed(2)}</strong></em>
           <br /><br />
           <em>{props.pints > 0 ? `pints remaining: ${props.pints}` : "Out of stock."}</em>
-          <br />
+          <br /><br />
           <em>{props.pints < 10 && props.pints > 0 && "Almost empty"}</em>
         </CardText>
         <Button onClick={() => props.whenPintSold({
