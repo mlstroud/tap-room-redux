@@ -12,6 +12,7 @@ function NewKegForm(props) {
       brand: event.target.kegBrand.value,
       price: parseFloat(event.target.kegPrice.value),
       abv: event.target.kegAbv.value,
+      pints: 124,
       id: v4()
     })
   }

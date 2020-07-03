@@ -22,6 +22,10 @@ function Keg(props) {
               <th>Price</th>
               <td>{props.price}</td>
             </tr>
+            <tr>
+              <th>Pints Left</th>
+              <td>{props.pints}</td>
+            </tr>
           </tbody>
         </Table>
 
@@ -34,6 +38,7 @@ Keg.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
   price: PropTypes.number,
+  pints: PropTypes.number,
   id: PropTypes.string
 }
 
