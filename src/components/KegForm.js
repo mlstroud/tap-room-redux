@@ -26,6 +26,11 @@ function KegForm(props) {
           name="kegPrice"
           placeholder="6.99"
           className="form-control" />
+        <Label for="kegPints">Pints</Label>
+        <Input type="text"
+          name="kegPints"
+          placeholder="124 (Suggested)"
+          className="form-control" />
         <Button type="submit">{props.buttonText}</Button>
       </Form>
     </React.Fragment>

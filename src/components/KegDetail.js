@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Col, Row, Card, CardHeader, CardTitle, CardBody, Table, Button } from "reactstrap";
 
 function KegDetail(props) {
-  const { keg, onClickingDelete } = props;
+  const { keg, onClickingDelete, onClickingEdit } = props;
   return (
     <React.Fragment>
       <Col md="12">
@@ -36,6 +36,7 @@ function KegDetail(props) {
                 </tbody>
               </Table>
               <Button onClick={() => onClickingDelete(keg.id)}>Remove Keg</Button>
+              <Button onClick={() => onClickingEdit()}>Edit Keg</Button>
             </CardBody>
           </Card>
         </Row>
@@ -45,6 +46,8 @@ function KegDetail(props) {
 }
 
 KegDetail.propTypes = {
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func,
   name: PropTypes.string,
   brand: PropTypes.string,
   abv: PropTypes.number,
