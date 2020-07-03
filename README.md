@@ -63,9 +63,9 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * React
 * JavaScript
 * JSX
+* Reactstrap
 * HTML
 * CSS
-* Bootstrap
 * Git
 
 ### License
