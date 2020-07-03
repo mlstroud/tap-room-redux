@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import KegForm from "./KegForm";
 import { v4 } from "uuid";
-import { Form, Input, Label, Button } from "reactstrap";
 
 function NewKegForm(props) {
 
@@ -19,29 +19,9 @@ function NewKegForm(props) {
 
   return (
     <React.Fragment>
-      <Form onSubmit={handleNewKegFormSubmission}>
-        <Label for="kegName">Name</Label>
-        <Input type="text"
-          name="kegName"
-          placeholder="Tasty IPA"
-          className="form-control" />
-        <Label for="kegBrand">Brand</Label>
-        <Input type="text"
-          name="kegBrand"
-          placeholder="Tasty Brewing Co."
-          className="form-control" />
-        <Label for="kegAbv">ABV</Label>
-        <Input type="text"
-          name="kegAbv"
-          placeholder="6.2"
-          className="form-control" />
-        <Label for="kegPrice">Price</Label>
-        <Input type="text"
-          name="kegPrice"
-          placeholder="6.99"
-          className="form-control" />
-        <Button type="submit">Add</Button>
-      </Form>
+      <KegForm
+        formSubmissionHandler={handleNewKegFormSubmission}
+        buttonText="Add Keg" />
     </React.Fragment>
   );
 }
