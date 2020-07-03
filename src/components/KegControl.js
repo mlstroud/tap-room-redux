@@ -1,4 +1,5 @@
 import React from "react";
+import KegList from "./KegList";
 import NewKegForm from "./NewKegForm";
 import KegDetail from "./KegDetail";
 import EditKegForm from "./EditKegForm";
