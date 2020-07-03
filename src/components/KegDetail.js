@@ -1,39 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Col, Row, Card, CardHeader, CardTitle, CardBody, Table } from "reactstrap";
+import { Col, Row, Card, CardHeader, CardTitle, CardBody, Table, Button } from "reactstrap";
 
 function KegDetail(props) {
+  const { keg, onClickingDelete } = props;
   return (
     <React.Fragment>
       <Col md="12">
         <Row>
           <Card>
-            <CardHeader><h4>{props.keg.name}</h4></CardHeader>
+            <CardHeader><h4>{keg.name}</h4></CardHeader>
             <CardBody>
               <CardTitle>
-                {props.keg.pints < 10 && props.keg.pints > 0 && "Almost empty"}
-                {props.keg.pints === 0 && "Out of stock."}
+                {keg.pints < 10 && keg.pints > 0 && "Almost empty"}
+                {keg.pints === 0 && "Out of stock."}
               </CardTitle>
               <Table>
                 <tbody>
                   <tr>
                     <th>Brand:</th>
-                    <td>{props.keg.brand}</td>
+                    <td>{keg.brand}</td>
                   </tr>
                   <tr>
                     <th>ABV:</th>
-                    <td>{Number(props.keg.abv).toFixed(1)}%</td>
+                    <td>{Number(keg.abv).toFixed(1)}%</td>
                   </tr>
                   <tr>
                     <th>Price:</th>
-                    <td>${Number(props.keg.price).toFixed(2)}</td>
+                    <td>${Number(keg.price).toFixed(2)}</td>
                   </tr>
                   <tr>
                     <th>Pints Left:</th>
-                    <td>{props.keg.pints}</td>
+                    <td>{keg.pints}</td>
                   </tr>
                 </tbody>
               </Table>
+              <Button onClick={() => onClickingDelete(keg.id)}>Remove Keg</Button>
             </CardBody>
           </Card>
         </Row>
