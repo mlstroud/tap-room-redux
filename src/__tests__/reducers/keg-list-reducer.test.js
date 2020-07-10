@@ -104,4 +104,29 @@ describe("kegListReducer", () => {
       }
     });
   });
+
+  test("Should decrease pints by 1 when a pint is sold.", () => {
+
+    const { name, brand, price, abv, pints, id } = keg;
+    action = {
+      type: "SELL_PINT",
+      name: name,
+      brand: brand,
+      price: price,
+      abv: abv,
+      pints: pints,
+      id: id
+    };
+
+    expect(kegListReducer({}, action)).toEqual({
+      [id]: {
+        name: name,
+        brand: brand,
+        price: price,
+        abv: abv,
+        pints: pints - 1,
+        id: id
+      }
+    });
+  });
 });
