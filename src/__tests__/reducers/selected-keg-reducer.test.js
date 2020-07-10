@@ -1,4 +1,5 @@
 import selectedKegReducer from "../../reducers/selected-keg-reducer";
+import { SELECT_KEG } from "../../actions/ActionTypes";
 
 describe("selectedKegReducer", () => {
 
@@ -30,7 +31,7 @@ describe("selectedKegReducer", () => {
   test("Should return selected keg from state.", () => {
 
     action = {
-      type: "SELECT_KEG",
+      type: SELECT_KEG,
       id: 1
     };
 

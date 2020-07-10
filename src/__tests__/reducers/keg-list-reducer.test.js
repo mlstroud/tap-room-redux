@@ -1,4 +1,5 @@
 import kegListReducer from "../../reducers/keg-list-reducer";
+import * as c from "../../actions/ActionTypes";
 
 describe("kegListReducer", () => {
 
@@ -40,7 +41,7 @@ describe("kegListReducer", () => {
 
     const { name, brand, price, abv, pints, id } = keg;
     action = {
-      type: "ADD_KEG",
+      type: c.ADD_KEG,
       name: name,
       brand: brand,
       price: price,
@@ -65,7 +66,7 @@ describe("kegListReducer", () => {
 
     const { name, brand, price, abv, pints, id } = keg;
     action = {
-      type: "ADD_KEG",
+      type: c.ADD_KEG,
       name: "Hazealicious IPA",
       brand: brand,
       price: price,
@@ -89,7 +90,7 @@ describe("kegListReducer", () => {
   test("Should delete a keg from list.", () => {
 
     action = {
-      type: "DELETE_KEG",
+      type: c.DELETE_KEG,
       id: 1
     };
 
@@ -109,7 +110,7 @@ describe("kegListReducer", () => {
 
     const { name, brand, price, abv, pints, id } = keg;
     action = {
-      type: "SELL_PINT",
+      type: c.SELL_PINT,
       name: name,
       brand: brand,
       price: price,

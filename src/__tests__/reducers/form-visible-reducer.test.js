@@ -1,4 +1,5 @@
 import formReducer from "../../reducers/form-visible-reducer";
+import * as c from "../../actions/ActionTypes";
 
 describe("formReducer", () => {
 
@@ -7,6 +8,6 @@ describe("formReducer", () => {
   });
 
   test("Should toggle form state to true", () => {
-    expect(formReducer(false, { type: "TOGGLE_FORM" })).toEqual(true);
+    expect(formReducer(false, { type: c.TOGGLE_FORM })).toEqual(true);
   });
 });

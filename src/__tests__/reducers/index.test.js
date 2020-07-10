@@ -1,4 +1,11 @@
 import rootReducer from "../../reducers/index";
+import { createStore } from "redux";
+import formReducer from "../../reducers/form-visible-reducer";
+import kegListReducer from "../../reducers/keg-list-reducer";
+import editReducer from "../../reducers/editing-reducer";
+import selectedKegReducer from "../../reducers/selected-keg-reducer";
+
+let store = createStore(rootReducer);
 
 describe("rootReducer", () => {
 
@@ -9,5 +16,9 @@ describe("rootReducer", () => {
       formVisible: false,
       editing: false,
     });
+  });
+
+  test("Check if initial state of formReducer matches rootReducer.", () => {
+    expect(store.getState().formVisible).toEqual(formReducer(undefined, { type: null }));
   });
 });
