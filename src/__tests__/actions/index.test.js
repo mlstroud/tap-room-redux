@@ -53,4 +53,11 @@ describe("Keg list actions", () => {
       type: "TOGGLE_EDIT"
     });
   });
+
+  test("selectKeg should create SELECT_KEG action.", () => {
+    expect(actions.selectKeg(1)).toEqual({
+      type: "SELECT_KEG",
+      id: 1
+    });
+  });
 });
