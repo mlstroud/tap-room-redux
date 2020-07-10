@@ -7,6 +7,6 @@ export default (state = {}, action) => {
       const selectedKeg = state[id];
       return selectedKeg;
     default:
-      return state;
+      return null;
   }
 }
