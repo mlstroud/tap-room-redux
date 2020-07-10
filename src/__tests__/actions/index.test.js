@@ -47,4 +47,10 @@ describe("Keg list actions", () => {
       type: "TOGGLE_FORM"
     });
   });
+
+  test("toggleEdit should create TOGGLE_EDIT action.", () => {
+    expect(actions.toggleEdit()).toEqual({
+      type: "TOGGLE_EDIT"
+    });
+  });
 });
