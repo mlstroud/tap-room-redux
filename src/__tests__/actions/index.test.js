@@ -30,7 +30,7 @@ describe("Keg list actions", () => {
     });
   });
 
-  test("sellPint should create SELL_PIINT action.", () => {
+  test("sellPint should create SELL_PINT action.", () => {
     expect(actions.sellPint(newKeg)).toEqual({
       type: "SELL_PINT",
       name: "Crikey IPA",
@@ -40,5 +40,11 @@ describe("Keg list actions", () => {
       pints: 124,
       id: 1
     });
-  });;
+  });
+
+  test("toggleForm should create TOGGLE_FORM action.", () => {
+    expect(actions.toggleForm()).toEqual({
+      type: "TOGGLE_FORM"
+    });
+  });
 });
