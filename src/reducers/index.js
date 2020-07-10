@@ -3,6 +3,7 @@ import kegListReducer from "./keg-list-reducer";
 import editReducer from "./editing-reducer";
 import selectedKegReducer from "./selected-keg-reducer";
 import { combineReducers } from "redux";
+import * as c from "../actions/ActionTypes";
 
 // const rootReducer = combineReducers({
 //   masterKegList: kegListReducer,
@@ -12,31 +13,36 @@ import { combineReducers } from "redux";
 // });
 
 const rootReducer = (state, action) => {
+  // const kegList = kegListReducer(state, action);
+  // const edit = editReducer();
+  // const visible = formReducer();
+
   switch (action.type) {
-    case "ADD_KEG":
-    case "DELETE_KEG":
-    case "SELL_PINT":
+    case c.ADD_KEG:
+    case c.DELETE_KEG:
+    case c.SELL_PINT:
       return {
         masterKegList: kegListReducer(state, action)
       }
-    case "SELECT_KEG":
+    case c.SELECT_KEG:
       return {
         selectedKeg: selectedKegReducer(state.masterKegList, action)
       }
-    case "TOGGLE_EDIT":
+    case c.TOGGLE_EDIT:
       return {
         editing: editReducer(state, action)
       }
-    case "TOGGLE_FORM":
+    case c.TOGGLE_FORM:
       return {
         formVisible: formReducer(state, action)
       }
     default:
+      const kegList = kegListReducer(state, action);
       return {
         masterKegList: kegListReducer(state, action),
-        selectedKeg: selectedKegReducer(state.masterKegList, action),
-        editing: editReducer(state.editing, action),
-        formVisible: formReducer(state.formVisible, action)
+        selectedKeg: selectedKegReducer(kegList, action),
+        editing: editReducer(false, action),
+        formVisible: formReducer(false, action)
       }
   }
 }
