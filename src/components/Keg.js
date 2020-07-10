@@ -10,7 +10,7 @@ function Keg(props) {
     <React.Fragment>
       <CardHeader><h4>{props.name}</h4></CardHeader>
       <CardBody>
-        <img src={BeerIcon} class="beer-icon" />
+        <img src={BeerIcon} className="beer-icon" />
         <CardText>
           <em>by {props.brand} {Number(props.abv).toFixed(1)}%    <strong>${Number(props.price).toFixed(2)}</strong></em>
           <br /><br />
