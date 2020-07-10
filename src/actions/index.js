@@ -38,3 +38,8 @@ export const toggleForm = () => ({
 export const toggleEdit = () => ({
   type: "TOGGLE_EDIT"
 });
+
+export const selectKeg = id => ({
+  type: "SELECT_KEG",
+  id
+});
