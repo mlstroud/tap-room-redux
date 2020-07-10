@@ -23,4 +23,11 @@ describe("Keg list actions", () => {
       id: 1
     });
   });
+
+  test("deleteKeg should create DELETE_KEG action.", () => {
+    expect(actions.deleteKeg(1)).toEqual({
+      type: "DELETE_TICKET",
+      id: 1
+    });
+  });
 });
