@@ -34,3 +34,7 @@ export const sellPint = (keg) => {
 export const toggleForm = () => ({
   type: "TOGGLE_FORM"
 });
+
+export const toggleEdit = () => ({
+  type: "TOGGLE_EDIT"
+});
