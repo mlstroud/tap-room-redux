@@ -55,17 +55,9 @@ describe("Keg list actions", () => {
     });
   });
 
-  test("selectKeg should create SELECT_KEG action.", () => {
-    const { name, brand, price, abv, pints, id } = newKeg;
-
-    expect(actions.selectKeg(newKeg)).toEqual({
-      type: c.SELECT_KEG,
-      name: name,
-      brand: brand,
-      price: price,
-      abv: abv,
-      pints: pints,
-      id: id
+  test("noEdit should create NO_EDIT action.", () => {
+    expect(actions.noEdit()).toEqual({
+      type: c.NO_EDIT
     });
   });
 });

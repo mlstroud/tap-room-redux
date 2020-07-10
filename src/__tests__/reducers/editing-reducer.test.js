@@ -9,4 +9,8 @@ describe("editingReducer", () => {
   test("Should toggle editing state to true.", () => {
     expect(editingReducer(false, { type: c.TOGGLE_EDIT })).toEqual(true);
   });
+
+  test("noEdit should set state to false.", () => {
+    expect(editingReducer(true, { type: c.NO_EDIT })).toEqual(false);
+  });
 });
