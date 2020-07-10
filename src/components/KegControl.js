@@ -19,42 +19,34 @@ class KegControl extends React.Component {
   handleClick = () => {
     const { dispatch } = this.props;
     if (this.state.selectedKeg !== null) {
-      // this.setState({
-      //   formVisibleOnPage: false,
-      //   selectedKeg: null,
-      //   editing: false
-      // });
       const action1 = a.toggleForm();
       const action2 = a.toggleEdit();
+
       dispatch(action1);
       dispatch(action2);
+
       this.setState({
         selectedKeg: null
       });
     } else {
-      // this.setState(prevState => ({
-      //   formVisibleOnPage: !prevState.formVisibleOnPage
-      // }));
       const action = a.toggleForm();
+
       dispatch(action);
     }
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    // const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    // this.setState({
-    //   masterKegList: newMasterKegList,
-    //   formVisibleOnPage: false
-    // });
     const { dispatch } = this.props;
     const action = a.addKeg(newKeg);
-    dispatch(action);
     const action2 = a.toggleForm();
+
+    dispatch(action);
     dispatch(action2);
   }
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.props.masterKegList[id];
+
     this.setState({
       selectedKeg: selectedKeg
     });
@@ -62,26 +54,19 @@ class KegControl extends React.Component {
 
   handleSellingPint = (soldKeg) => {
     if (soldKeg.pints > 0) {
-      // this.setState(prevState => ({
-      //   masterKegList: prevState.masterKegList.map(
-      //     (keg, index) => (keg.id === soldKeg.id ? Object.assign({}, this.state.masterKegList[index], { pints: parseInt(soldKeg.pints - 1) }) : keg)
-      //   )
-      // }));
       const { dispatch } = this.props;
       const action = a.sellPint(soldKeg);
+
       dispatch(action);
     }
   }
 
   handleDeletingKeg = (id) => {
-    // const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
-    // this.setState({
-    //   masterKegList: newMasterKegList,
-    //   selectedKeg: null
-    // });
     const { dispatch } = this.props;
     const action = a.deleteKeg(id);
+
     dispatch(action);
+
     this.setState({
       selectedKeg: null
     });
@@ -94,19 +79,11 @@ class KegControl extends React.Component {
   }
 
   handleEditingKeg = (editedKeg) => {
-    // const editedMasterKegList = this.state.masterKegList.map(
-    //   (keg, index) => (keg.id === editedKeg.id ? Object.assign({}, this.state.masterKegList[index], editedKeg) : keg)
-    // );
-
-    // this.setState({
-    //   masterKegList: editedMasterKegList,
-    //   editing: false,
-    //   selectedKeg: null
-    // })
     const { dispatch } = this.props;
     const action = a.addKeg(editedKeg);
-    dispatch(action);
     const action2 = a.toggleEdit();
+
+    dispatch(action);
     dispatch(action2);
 
     this.setState({
