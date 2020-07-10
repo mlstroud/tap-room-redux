@@ -7,12 +7,12 @@ import * as c from "../actions/ActionTypes";
 
 const rootReducer = combineReducers({
   masterKegList: kegListReducer,
-  // selectedKeg: selectedKegReducer(masterKegList),
+  // selectedKeg: selectedKegReducer,
   formVisible: formReducer,
   editing: editReducer
 });
 
-// const rootReducer = (state, action) => {
+// const rootReducer = (state = {}, action) => {
 //   // const kegList = kegListReducer(state, action);
 //   // const edit = editReducer();
 //   // const visible = formReducer();
@@ -37,12 +37,12 @@ const rootReducer = combineReducers({
 //         formVisible: formReducer(state, action)
 //       }
 //     default:
-//       const kegList = kegListReducer(state, action);
+//       const kegList = kegListReducer(state = {}, action);
 //       return {
 //         masterKegList: kegListReducer(state, action),
-//         selectedKeg: selectedKegReducer(kegList, action),
-//         editing: editReducer(false, action),
-//         formVisible: formReducer(false, action)
+//         selectedKeg: selectedKegReducer(state.masterKegList, action),
+//         editing: editReducer(state.editing, action),
+//         formVisible: formReducer(state.formVisible, action)
 //       }
 //   }
 // };

@@ -4,3 +4,5 @@ export const SELL_PINT = "SELL_PINT";
 export const TOGGLE_FORM = "TOGGLE_FORM";
 export const TOGGLE_EDIT = "TOGGLE_EDIT";
 export const SELECT_KEG = "SELECT_KEG";
+export const CLEAR_KEG = "CLEAR_KEG";
+export const NO_EDIT = "NO_EDIT";
