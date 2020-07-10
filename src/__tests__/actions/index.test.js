@@ -2,17 +2,16 @@ import * as actions from "../../actions";
 
 describe("Keg list actions", () => {
 
+  const newKeg = {
+    name: "Crikey IPA",
+    brand: "Reuben's Brews",
+    price: 6.99,
+    abv: 6.8,
+    pints: 124,
+    id: 1
+  };
+
   test("addKeg should create ADD_KEG action.", () => {
-
-    const newKeg = {
-      name: "Crikey IPA",
-      brand: "Reuben's Brews",
-      price: 6.99,
-      abv: 6.8,
-      pints: 124,
-      id: 1
-    };
-
     expect(actions.addKeg(newKeg)).toEqual({
       type: "ADD_KEG",
       name: "Crikey IPA",
@@ -30,4 +29,16 @@ describe("Keg list actions", () => {
       id: 1
     });
   });
+
+  test("sellPint should create SELL_PIINT action.", () => {
+    expect(actions.sellPint(newKeg)).toEqual({
+      type: "SELL_PINT",
+      name: "Crikey IPA",
+      brand: "Reuben's Brews",
+      price: 6.99,
+      abv: 6.8,
+      pints: 124,
+      id: 1
+    });
+  });;
 });
