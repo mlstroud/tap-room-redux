@@ -1,5 +1,4 @@
 export const addKeg = (keg) => {
-
   const { name, brand, price, abv, pints, id } = keg;
 
   return {
@@ -17,3 +16,17 @@ export const deleteKeg = id => ({
   type: "DELETE_KEG",
   id
 });
+
+export const sellPint = (keg) => {
+  const { name, brand, price, abv, pints, id } = keg;
+
+  return {
+    type: "SELL_PINT",
+    name: name,
+    brand: brand,
+    price: price,
+    abv: abv,
+    pints: pints,
+    id: id
+  };
+}
