@@ -6,6 +6,7 @@ import EditKegForm from "./EditKegForm";
 import { Button } from "reactstrap";
 import { connect } from "react-redux";
 import * as a from "../actions";
+import PropTypes from "prop-types";
 
 class KegControl extends React.Component {
 
@@ -109,8 +110,13 @@ class KegControl extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+KegControl.propTypes = {
+  masterKegList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool,
+  editing: PropTypes.bool
+};
 
+const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
     formVisibleOnPage: state.formVisible,
