@@ -1,12 +1,13 @@
-# _Tap Room_
+# _Tap Room - Redux Refactor_
 
-#### Epicodus Indivual Project - Last Updated July 3rd, 2020
+#### Epicodus Indivual Project - Last Updated July 10th, 2020
 
 #### By _**Matt Stroud**_
 
 ## Description
 _React web application for a tap room._  
 _The user can add, edit, remove,and view details of kegs which are displayed in a list._  
+_This repository is a refactor of the tap room application that implements Redux for all local and shared state._
 
 ## Component Diagram
 
