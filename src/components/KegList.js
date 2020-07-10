@@ -8,8 +8,9 @@ function KegList(props) {
     <React.Fragment>
       <Col md="12">
         {props.kegList.length === 0 && <h3>No kegs in stock</h3>}
-        {props.kegList.map((keg) =>
-          <Row key={"row" + keg.id}>
+        {Object.values(props.kegList).map((keg) => {
+
+          return <Row key={"row" + keg.id}>
             <Card key={"card" + keg.id}>
               <Keg
                 whenKegClicked={props.onKegSelection}
@@ -23,7 +24,7 @@ function KegList(props) {
                 key={keg.id} />
             </Card>
           </Row>
-        )}
+        })}
       </Col>
     </React.Fragment>
   );
