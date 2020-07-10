@@ -13,6 +13,17 @@ _This repository is a refactor of the tap room application that implements Redux
 
 ![Component diagram for tap room application.](https://raw.githubusercontent.com/mlstroud/tap-room/master/diagram.drawio.png)
 
+## Redux Refactor
+|  |  |
+|--|--|
+| :heavy_check_mark: | Move masterKegList to redux store. |
+| :heavy_check_mark: | Move form boolean to redux store. |
+| :heavy_check_mark:| Move editing boolean to redux store. |
+| | Add selected keg to redux store. |
+|:heavy_check_mark: | Add action creators. |
+|:heavy_check_mark: | Add action constants. |
+| :heavy_check_mark: | Add proptypes for redux props. |
+
 ## User Stories
 |  |  |
 |--|--|
@@ -55,6 +66,8 @@ npm run start
 > If the browser does not automatically launch, you can generally view it at https://localhost:3000
 
 ## Known Bugs
+
+* Unable to get redux state to work with selected keg. Tried multiple approaches including writing custom combineReducer function. Bugs introduced only appeared on certain pages, without any immediate explanation, so for now selected keg is stored in local state.
  
 ## Support and contact details
 

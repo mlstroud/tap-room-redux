@@ -121,7 +121,6 @@ const mapStateToProps = state => {
     masterKegList: state.masterKegList,
     formVisibleOnPage: state.formVisible,
     editing: state.editing,
-    // selectedKeg: state.selectedKeg
   }
 };
 
