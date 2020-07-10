@@ -56,9 +56,16 @@ describe("Keg list actions", () => {
   });
 
   test("selectKeg should create SELECT_KEG action.", () => {
-    expect(actions.selectKeg(1)).toEqual({
+    const { name, brand, price, abv, pints, id } = newKeg;
+
+    expect(actions.selectKeg(newKeg)).toEqual({
       type: c.SELECT_KEG,
-      id: 1
+      name: name,
+      brand: brand,
+      price: price,
+      abv: abv,
+      pints: pints,
+      id: id
     });
   });
 });
