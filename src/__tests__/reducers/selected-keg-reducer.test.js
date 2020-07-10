@@ -23,8 +23,8 @@ describe("selectedKegReducer", () => {
     }
   };
 
-  test("Should return default state if no action type matches", () => {
-    expect(selectedKegReducer({}, { type: null })).toEqual({});
+  test("Should return null if no action type matches", () => {
+    expect(selectedKegReducer({}, { type: null })).toEqual(null);
   });
 
   test("Should return selected keg from state.", () => {
