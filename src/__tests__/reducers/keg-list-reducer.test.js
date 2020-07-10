@@ -41,4 +41,29 @@ describe("kegListReducer", () => {
       }
     });
   });
+
+  test("Should edit an existing keg to have new properties.", () => {
+
+    const { name, brand, price, abv, pints, id } = keg;
+    action = {
+      type: "ADD_KEG",
+      name: "Hazealicious IPA",
+      brand: brand,
+      price: price,
+      abv: 6.0,
+      pints: pints,
+      id: id
+    };
+
+    expect(kegListReducer({}, action)).toEqual({
+      [id]: {
+        name: "Hazealicious IPA",
+        brand: brand,
+        price: price,
+        abv: 6.0,
+        pints: pints,
+        id: id
+      }
+    });
+  });
 });
