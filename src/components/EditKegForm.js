@@ -3,9 +3,10 @@ import KegForm from "./KegForm";
 import PropTypes from "prop-types";
 
 function EditKegForm(props) {
-  const { keg } = props;
+  //const { id } = props;
 
   function handleEditTicketFormSubmission(event) {
+    console.table(props);
     event.preventDefault();
     props.onEditClick({
       name: event.target.kegName.value,
@@ -13,7 +14,7 @@ function EditKegForm(props) {
       price: parseFloat(event.target.kegPrice.value),
       abv: event.target.kegAbv.value,
       pints: event.target.kegPints.value,
-      id: keg.id
+      id: props.id
     });
   }
   return (

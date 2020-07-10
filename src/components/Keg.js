@@ -26,7 +26,14 @@ function Keg(props) {
           price: props.price,
           id: props.id
         })}>Sell Pint</Button>
-        <Button onClick={() => props.whenKegClicked(props.id)}>View Details</Button>
+        <Button onClick={() => props.whenKegClicked({
+          name: props.name,
+          brand: props.brand,
+          abv: props.abv,
+          pints: props.pints,
+          price: props.price,
+          id: props.id
+        })}>View Details</Button>
       </CardBody>
     </React.Fragment>
   );
