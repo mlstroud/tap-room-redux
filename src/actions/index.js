@@ -29,4 +29,8 @@ export const sellPint = (keg) => {
     pints: pints,
     id: id
   };
-}
+};
+
+export const toggleForm = () => ({
+  type: "TOGGLE_FORM"
+});
