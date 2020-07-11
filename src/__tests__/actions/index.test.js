@@ -60,4 +60,22 @@ describe("Keg list actions", () => {
       type: c.NO_EDIT
     });
   });
+
+  test("clearKeg should create CLEAR_KEG action.", () => {
+    expect(actions.clearKeg()).toEqual({
+      type: c.CLEAR_KEG
+    });
+  });
+
+  test("selectKeg should create SELECT_KEG action.", () => {
+    expect(actions.selectKeg(newKeg)).toEqual({
+      type: c.SELECT_KEG,
+      name: "Crikey IPA",
+      brand: "Reuben's Brews",
+      price: 6.99,
+      abv: 6.8,
+      pints: 124,
+      id: 1
+    });
+  });
 });
