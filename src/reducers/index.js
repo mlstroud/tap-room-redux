@@ -8,7 +8,8 @@ import * as c from "../actions/ActionTypes";
 const rootReducer = combineReducers({
   masterKegList: kegListReducer,
   formVisible: formReducer,
-  editing: editReducer
+  editing: editReducer,
+  selectedKeg: selectedKegReducer
 });
 
 export default rootReducer;

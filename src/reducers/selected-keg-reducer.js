@@ -1,6 +1,6 @@
 import { SELECT_KEG, CLEAR_KEG } from "../actions/ActionTypes";
 
-export default (state = {}, action) => {
+export default (state = null, action) => {
 
   const { name, brand, price, abv, pints, id } = action;
 
@@ -17,6 +17,6 @@ export default (state = {}, action) => {
     case CLEAR_KEG:
       return null;
     default:
-      return null;
+      return state;
   }
 }

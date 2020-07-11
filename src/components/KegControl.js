@@ -12,19 +12,13 @@ class KegControl extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      selectedKeg: null
-    };
   }
 
   handleClick = () => {
     const { dispatch } = this.props;
-    if (this.state.selectedKeg !== null) {
+    if (this.props.selectedKeg !== null) {
       dispatch(a.noEdit());
-
-      this.setState({
-        selectedKeg: null
-      });
+      dispatch(a.clearKeg());
     } else {
       dispatch(a.toggleForm());
     }
@@ -39,10 +33,8 @@ class KegControl extends React.Component {
 
   handleChangingSelectedKeg = (keg) => {
     const selectedKeg = this.props.masterKegList[keg.id];
-
-    this.setState({
-      selectedKeg: selectedKeg
-    });
+    const { dispatch } = this.props;
+    dispatch(a.selectKeg(keg));
   }
 
   handleSellingPint = (soldKeg) => {
@@ -55,10 +47,8 @@ class KegControl extends React.Component {
   handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
     dispatch(a.deleteKeg(id));
+    dispatch(a.clearKeg());
 
-    this.setState({
-      selectedKeg: null
-    });
   }
 
   handleClickingEdit = () => {
@@ -71,10 +61,7 @@ class KegControl extends React.Component {
 
     dispatch(a.addKeg(editedKeg));
     dispatch(a.toggleEdit());
-
-    this.setState({
-      selectedKeg: null
-    });
+    dispatch(a.clearKeg());
   }
 
   render() {
@@ -82,11 +69,11 @@ class KegControl extends React.Component {
     let buttonText = null;
 
     if (this.props.editing) {
-      currentlyVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditClick={this.handleEditingKeg} />
+      currentlyVisibleState = <EditKegForm keg={this.props.selectedKeg} onEditClick={this.handleEditingKeg} />
       buttonText = "View Kegs";
-    } else if (this.state.selectedKeg !== null) {
+    } else if (this.props.selectedKeg !== null) {
       currentlyVisibleState = <KegDetail
-        keg={this.state.selectedKeg}
+        keg={this.props.selectedKeg}
         onClickingDelete={this.handleDeletingKeg}
         onClickingEdit={this.handleClickingEdit} />
       buttonText = "View Kegs";
@@ -113,7 +100,8 @@ class KegControl extends React.Component {
 KegControl.propTypes = {
   masterKegList: PropTypes.object,
   formVisibleOnPage: PropTypes.bool,
-  editing: PropTypes.bool
+  editing: PropTypes.bool,
+  selectedKeg: PropTypes.object
 };
 
 const mapStateToProps = state => {
@@ -121,6 +109,7 @@ const mapStateToProps = state => {
     masterKegList: state.masterKegList,
     formVisibleOnPage: state.formVisible,
     editing: state.editing,
+    selectedKeg: state.selectedKeg
   }
 };
 
